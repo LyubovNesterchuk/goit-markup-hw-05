@@ -423,9 +423,6 @@ img {
   margin-bottom: 8px;
 }
 
-.portfolio-desc {
-}
-
 /* #endregion Portfolio section */
 
 /* #region footer */
@@ -528,7 +525,7 @@ img {
   border-radius: 4px;
   border: none;
   padding: 8px 24px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
   background: #4d5ae5;
   display: flex;
