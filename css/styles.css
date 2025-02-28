@@ -456,7 +456,7 @@ img {
   max-width: 264px;
 }
 
-.footer-social-desc {
+.footer-desc {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -484,35 +484,37 @@ img {
 }
 
 .subscribe-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
   margin-left: auto;
 }
 
-.container-label {
-  display: block;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #fff;
-  margin-bottom: 16px;
+.footer-form {
+  display: flex;
+  gap: 24px;
 }
 
-.form-input {
+.footer-form-input {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
+  padding-left: 16px;
   border: 1px solid #fff;
   border-radius: 4px;
   width: 264px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: transparent;
   outline: none;
-  margin-right: 24px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus,
-.form-input:hover {
+.footer-form-input::placeholder {
+  color: #ffffff;
+}
+
+.footer-form-input:focus,
+.footer-form-input:hover {
   border: 1px solid #31d0aa;
 }
 
@@ -557,8 +559,7 @@ img {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -587,20 +588,26 @@ img {
 }
 
 .close-button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   right: 24px;
   top: 24px;
-  border-radius: 50px;
+  border-radius: 50%;
   width: 24px;
   height: 24px;
   margin-left: auto;
   background-color: #e7e9fc;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  stroke: rgba(0, 0, 0, 0.1);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button:hover,
@@ -621,11 +628,11 @@ img {
   max-width: 360px;
 }
 
-.modal-container-block {
+.modal-form-field {
   margin-bottom: 8px;
 }
 
-.modal-container-label {
+.form-label {
   display: block;
   font-weight: 400;
   font-size: 12px;
@@ -635,11 +642,11 @@ img {
   margin-bottom: 4px;
 }
 
-.modal-form-input-container {
+.form-input-wrapper {
   position: relative;
 }
 
-.modal-form-input {
+.form-input {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
@@ -651,26 +658,28 @@ img {
   border-radius: 4px;
   padding-left: 38px;
   outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-icon {
+.form-icon {
   position: absolute;
   top: 50%;
   left: 16px;
   padding: 3px 0px;
   fill: #2e2f42;
   transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-form-input:focus {
+.form-input:focus {
   border: 1px solid #4d5ae5;
 }
 
-.modal-form-input:focus + .modal-form-icon {
+.form-input:focus + .form-icon {
   fill: #4d5ae5;
 }
 
-.modal-form-input::placeholder {
+.form-input::placeholder {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
@@ -678,16 +687,8 @@ img {
   color: rgba(46, 47, 66, 0.4);
 }
 
-.modal-container-block.comment {
+.modal-form-field.comment {
   margin-bottom: 16px;
-}
-
-.modal-container-label {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16667;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
 }
 
 .user-comment {
@@ -719,22 +720,25 @@ img {
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   margin-right: 8px;
-}
-
-.checkbox-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input:checked + label > span {
+input:checked + label > span {
   fill: #f4f4fd;
   background-color: #404bbf;
+  border: none;
 }
 
 .checkbox-label {
   cursor: pointer;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
