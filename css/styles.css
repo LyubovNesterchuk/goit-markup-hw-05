@@ -613,8 +613,8 @@ img {
   background-color: #404bbf;
   border: none;
 }
-.close-button:hover > svg,
-.close-button:focus > svg {
+.close-button:hover > .close-icon,
+.close-button:focus > .close-icon {
   fill: #ffffff;
 }
 .modal-description {
