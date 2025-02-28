@@ -592,6 +592,7 @@ img {
   position: absolute;
   right: 24px;
   top: 24px;
+  z-index: 2;
   border-radius: 50%;
   width: 24px;
   height: 24px;
