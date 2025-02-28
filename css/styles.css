@@ -612,9 +612,9 @@ img {
 
 .close-button:hover,
 .close-button:focus {
-  fill: #fff;
-  border: none;
+  fill: #ffffff;
   background-color: #404bbf;
+  border: none;
 }
 
 .modal-description {
