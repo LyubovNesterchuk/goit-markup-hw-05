@@ -610,11 +610,13 @@ img {
 
 .close-button:focus,
 .close-button:hover {
-  fill: #ffffff;
   background-color: #404bbf;
   border: none;
 }
-
+.close-button:hover > svg,
+.close-button:focus > svg {
+  fill: #ffffff;
+}
 .modal-description {
   font-weight: 500;
   font-size: 16px;
